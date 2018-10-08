@@ -1,0 +1,1116 @@
+{
+	"info": {
+		"_postman_id": "73578383-5bae-4390-9dc3-ad0be4389507",
+		"name": "Test Api HeavenHR",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Candidate 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3b7493a4-36ca-4e58-998b-8b3bb99bbb94",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"candidateEmail\": \"hudson@schumaker.com.br\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/candidate/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"candidate",
+						""
+					]
+				},
+				"description": "Loggin with the user: heavenhr and password secret.\nCall endpoint /api/offer/"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Candidate 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3b7493a4-36ca-4e58-998b-8b3bb99bbb94",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"candidateEmail\": \"hugo@schumaker.com.br\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/candidate/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"candidate",
+						""
+					]
+				},
+				"description": "Loggin with the user: heavenhr and password secret.\nCall endpoint /api/offer/"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Candidate 2 Again",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "44d3e5ce-7991-4abf-a366-ac3306804b56",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 409\", function () {",
+							"    pm.response.to.have.status(409);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"candidateEmail\": \"hugo@schumaker.com.br\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/candidate/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"candidate",
+						""
+					]
+				},
+				"description": "Loggin with the user: heavenhr and password secret.\nCall endpoint /api/offer/"
+			},
+			"response": []
+		},
+		{
+			"name": "User Creates Offer 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c375ab90-fbff-489c-8857-41ce141a0c59",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "heavenhr",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jobTitle\": \"Java Jr. Developer\",\n    \"startDate\": \"2018-10-08\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/offer/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"offer",
+						""
+					]
+				},
+				"description": "Loggin with the user: heavenhr and password secret.\nCall endpoint /api/offer/"
+			},
+			"response": []
+		},
+		{
+			"name": "User Creates Offer 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c5382ccc-8bb9-47ef-956b-a774fa87a64a",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "heavenhr",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jobTitle\": \"Java Mid. Developer\",\n    \"startDate\": \"2018-10-08\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/offer/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"offer",
+						""
+					]
+				},
+				"description": "Loggin with the user: heavenhr and password secret.\nCall endpoint /api/offer/"
+			},
+			"response": []
+		},
+		{
+			"name": "User Creates Offer 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d25c885a-af62-43d7-aefa-6f438ac9b78b",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "heavenhr",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jobTitle\": \"Java Sr. Developer\",\n    \"startDate\": \"2018-10-08\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/offer/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"offer",
+						""
+					]
+				},
+				"description": "Loggin with the user: heavenhr and password secret.\nCall endpoint /api/offer/"
+			},
+			"response": []
+		},
+		{
+			"name": "User Try Creates Offer 3 Again",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a96059d5-aef7-41eb-bd73-c23394d9d121",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 409\", function () {",
+							"    pm.response.to.have.status(409);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "heavenhr",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jobTitle\": \"Java Sr. Developer\",\n    \"startDate\": \"2018-10-08\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/offer/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"offer",
+						""
+					]
+				},
+				"description": "Loggin with the user: heavenhr and password secret.\nCall endpoint /api/offer/"
+			},
+			"response": []
+		},
+		{
+			"name": "User Lists Offers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "198e0473-b109-4b8e-ad96-5ee0031211a4",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "heavenhr",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"candidate\": {\n    \"canditadeId\": 2\n  },\n  \"offer\": {\n    \"offerId\": 2\n  }\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/offer/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"offer",
+						""
+					]
+				},
+				"description": "Loggin with the user: heavenhr and password secret.\nCall endpoint /api/offer/"
+			},
+			"response": []
+		},
+		{
+			"name": "User Reads Offers 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "198e0473-b109-4b8e-ad96-5ee0031211a4",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "heavenhr",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"candidate\": {\n    \"canditadeId\": 2\n  },\n  \"offer\": {\n    \"offerId\": 2\n  }\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/offer/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"offer",
+						"3"
+					]
+				},
+				"description": "Loggin with the user: heavenhr and password secret.\nCall endpoint /api/offer/"
+			},
+			"response": []
+		},
+		{
+			"name": "Candidate 1 applies to Offer 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3b7493a4-36ca-4e58-998b-8b3bb99bbb94",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"candidate\": {\n    \"canditadeId\": 1\n  },\n  \"offer\": {\n    \"offerId\": 1\n  }\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/application/public/apply/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"application",
+						"public",
+						"apply",
+						""
+					]
+				},
+				"description": "Loggin with the user: heavenhr and password secret.\nCall endpoint /api/offer/"
+			},
+			"response": []
+		},
+		{
+			"name": "Candidate 2 applies to Offer 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3b7493a4-36ca-4e58-998b-8b3bb99bbb94",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"candidate\": {\n    \"canditadeId\": 2\n  },\n  \"offer\": {\n    \"offerId\": 2\n  }\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/application/public/apply/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"application",
+						"public",
+						"apply",
+						""
+					]
+				},
+				"description": "Loggin with the user: heavenhr and password secret.\nCall endpoint /api/offer/"
+			},
+			"response": []
+		},
+		{
+			"name": "Candidate 2 applies to Offer 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3b7493a4-36ca-4e58-998b-8b3bb99bbb94",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"candidate\": {\n    \"canditadeId\": 2\n  },\n  \"offer\": {\n    \"offerId\": 3\n  }\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/application/public/apply/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"application",
+						"public",
+						"apply",
+						""
+					]
+				},
+				"description": "Loggin with the user: heavenhr and password secret.\nCall endpoint /api/offer/"
+			},
+			"response": []
+		},
+		{
+			"name": "Candidate 1 try to applies to Offer 4 (not exists)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5012f140-7ac9-47bb-9109-4d78ff0d8e8e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"candidate\": {\n    \"canditadeId\": 1\n  },\n  \"offer\": {\n    \"offerId\": 4\n  }\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/application/public/apply/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"application",
+						"public",
+						"apply",
+						""
+					]
+				},
+				"description": "Loggin with the user: heavenhr and password secret.\nCall endpoint /api/offer/"
+			},
+			"response": []
+		},
+		{
+			"name": "Candidate 2 applies to Offer 3 Again",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fcdba918-4ec7-4e8b-a5c9-7ee5093ed3d3",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"candidate\": {\n    \"canditadeId\": 2\n  },\n  \"offer\": {\n    \"offerId\": 3\n  }\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/application/public/apply/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"application",
+						"public",
+						"apply",
+						""
+					]
+				},
+				"description": "Loggin with the user: heavenhr and password secret.\nCall endpoint /api/offer/"
+			},
+			"response": []
+		},
+		{
+			"name": "Candidate 1 applies to Offer 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3b7493a4-36ca-4e58-998b-8b3bb99bbb94",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"candidate\": {\n    \"canditadeId\": 1\n  },\n  \"offer\": {\n    \"offerId\": 2\n  }\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/application/public/apply/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"application",
+						"public",
+						"apply",
+						""
+					]
+				},
+				"description": "Loggin with the user: heavenhr and password secret.\nCall endpoint /api/offer/"
+			},
+			"response": []
+		},
+		{
+			"name": "User track the number of Applications",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "198e0473-b109-4b8e-ad96-5ee0031211a4",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"candidate\": {\n    \"canditadeId\": 2\n  },\n  \"offer\": {\n    \"offerId\": 2\n  }\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/application/total",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"application",
+						"total"
+					]
+				},
+				"description": "Loggin with the user: heavenhr and password secret.\nCall endpoint /api/offer/"
+			},
+			"response": []
+		},
+		{
+			"name": "User lists Appliacations of Offer 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "198e0473-b109-4b8e-ad96-5ee0031211a4",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "heavenhr",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"candidate\": {\n    \"canditadeId\": 2\n  },\n  \"offer\": {\n    \"offerId\": 2\n  }\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/application/offer/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"application",
+						"offer",
+						"2"
+					]
+				},
+				"description": "Loggin with the user: heavenhr and password secret.\nCall endpoint /api/offer/"
+			},
+			"response": []
+		},
+		{
+			"name": "User lists Appliacation 5 of Offer 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "198e0473-b109-4b8e-ad96-5ee0031211a4",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "heavenhr",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"candidate\": {\n    \"canditadeId\": 2\n  },\n  \"offer\": {\n    \"offerId\": 2\n  }\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/application/offer/2/5",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"application",
+						"offer",
+						"2",
+						"5"
+					]
+				},
+				"description": "Loggin with the user: heavenhr and password secret.\nCall endpoint /api/offer/"
+			},
+			"response": []
+		},
+		{
+			"name": "User progress status of Appliacation 5 of Offer 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2a3cdb4c-c392-48b9-8477-57b87da64498",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "heavenhr",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/plain"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "INVITED"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/application/5",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"application",
+						"5"
+					]
+				},
+				"description": "Loggin with the user: heavenhr and password secret.\nCall endpoint /api/offer/"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "secret",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "heavenhr",
+				"type": "string"
+			}
+		]
+	}
+}
