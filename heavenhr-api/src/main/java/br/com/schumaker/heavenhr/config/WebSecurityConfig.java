@@ -13,7 +13,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 * @version 1.0.0
 */
 @Configuration
-@EnableWebSecurity //Simple WebSecurityConfiguration for the purpose of the exercise.
+@EnableWebSecurity // Simple WebSecurityConfiguration for the purpose of the exercise.
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
